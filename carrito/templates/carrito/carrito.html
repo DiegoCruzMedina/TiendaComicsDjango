@@ -1,0 +1,23 @@
+{% extends "tiendaweb/baseCarro.html" %}
+
+{% load static %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block content %}
+<br>
+<div class="tabla">
+    <div class="container1">
+        <div class="carro">
+            <img src="${imagen}" alt="Imagen" class="imagenCarro">
+        </div>
+        <div class="carro">
+            <h2 class="carro-name">${name}</h2>
+        </div>
+        <div class="carro">
+            <p class="carro-text">${precio}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

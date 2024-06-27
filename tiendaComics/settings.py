@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'comics',
+    'tiendaWeb',
+    'carrito',
+    'contacto',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'tiendaComics.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "TiendaWeb/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+
     },
 ]
 
@@ -117,6 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "tiendaWeb/static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

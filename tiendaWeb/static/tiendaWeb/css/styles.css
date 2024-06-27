@@ -1,0 +1,382 @@
+
+/*--------CUERPOPRINCIPAL----*/
+body{
+    background-color:#ece9e9;
+    font-family: sans-serif;
+}
+
+ /*--------slider-------->*/
+ .slider-img {
+    height: 600px; 
+    object-fit: cover; 
+  }
+
+  .custom-caption {
+    top: 20%;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .custom-caption h1 {
+    font-size: 5.7rem; 
+    font-weight: bold;
+    color: #003392;
+    line-height: normal;
+  }
+
+  .custom-caption p {
+    font-size: 3rem; 
+    
+    color: #ffffff;
+    line-height: normal;
+  }
+
+  @media (max-width: 767.98px) {
+    .custom-caption h1 {
+      font-size: 2.5rem;
+    }
+    .custom-caption p {
+      font-size: 1.2rem;
+    }
+  }
+/*---------------->*/
+
+ 
+/*--------DISEÑO INTERMEDIO-------*/  
+.container2 {
+  padding-top: 35px;
+  padding-left: 75px;
+  padding-right: 75px;
+  padding-bottom: 30px;
+}
+.linkd {
+  text-decoration: none; /* Quitar el subrayado */
+  color: inherit; /* Heredar el color del elemento padre */
+}
+
+  .feature-item {
+    text-align: center;
+    padding-bottom: 20px;
+    
+  }
+  .feature-item img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .feature-item h5 {
+    font-size: 2.25rem;
+    margin-bottom: 10px;
+  }
+  .feature-item p {
+    font-size: 1.5rem;
+  }
+  .feature-item .divider {
+    width: 50px;
+    height: 2px;
+    background-color: #000;
+    margin: 0 auto 10px;
+  }
+  /*----------------------------*/
+
+
+  /*----------Comictitulo----------*/  
+
+.subs {
+    width: 100%;
+  }
+  .margen1{
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #555;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .margen {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .margen h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .margen h4 {
+    font-size: 1.5em;
+    margin-bottom: 1px;
+    color: #666;
+  }
+  
+  .badge.text-bg-secondary {
+    background-color: #ff4081;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  /*----------------------------*/
+ 
+  
+  
+  /*----------Footer---------*/
+.footer{
+    background-color: gray;
+}
+
+.container{
+    max-width: 1200px;
+    padding: 80px 0;
+    
+}
+.footer-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-links{
+    width: 25%;
+    padding: 0 8px;
+}
+.footer-links h4 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #1935b1;
+}
+
+.footer-links ul li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: block;
+    margin-bottom:  15px;
+    transition: all .2s ease;
+}
+
+.footer-links ul li a:hover{
+    color: #ffffff;
+    padding-left: 6px;
+}
+.social-links a {
+    display: inline-block;
+    min-height: 40px;
+    width: 40px;
+    background-color: aliceblue;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all .3s ease;
+}
+/*----------------------------*/
+
+
+/*----------COMICS DISTINTOS---------*/
+#columna1{
+    display: flex;
+    justify-content: center;
+}
+#texto{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.catalogo{
+    padding: 15px 0 30px 0;
+    background: url('../img/otaku.jpg') center center fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin: 0;
+    position: relative;
+}
+.catalogo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(3.5px); 
+  z-index: 0; /* Para colocarlo atras de las cosas*/
+}
+
+
+#tarjeta2{
+    display: flex;
+    justify-content: center;
+}
+#a2{
+    display: flex;
+    justify-content: center;
+}
+#a3{
+    display: flex;
+    justify-content: center;
+}
+
+.catalogoF{
+  padding: 15px 0 30px 0;
+  background-color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin: 0;
+  position: relative;
+}
+.catalogoF::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(20px); 
+  z-index: 0; /* Para colocarlo atras de las cosas*/
+}
+/*----------------------------*/
+
+
+/*-----------CONTACTO-----------------*/
+.contact-header {
+  background-color: gray;
+  background-size: cover;
+  color: white;
+  padding: 30px 30px;
+  text-align: center;
+}
+.contact-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.contact-header p {
+  font-size: 1.5rem;
+}
+.contact-section {
+  padding: 50px 0;
+}
+.contact-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.contact-card:hover {
+  transform: translateY(-10px);
+}
+.contact-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.contact-card h3 {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+.contact-card p {
+  color: #666;
+}
+/*----------------------------*/
+
+
+/*--------Tarjetas-----------*/
+
+.container1 {
+  padding-left: 75px;
+  padding-right: 75px;
+  padding-bottom: 30px;
+}
+.card-img-top {
+  object-fit: cover;
+  height: 350px; /* Ajusta esta altura según sea necesario */
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #555;
+}
+
+/*----------------------------*/
+
+/*---Modale CONTAINER*/
+.modal-container {
+  width: 80%;
+  margin: 0 10%;
+  max-height: 88vh;
+  color: #ffffff;
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  overflow: auto;
+  z-index: 9;
+  top: 12vh;
+  scrollbar-color: none;
+}
+
+.modal-container::-webkit-scrollbar{
+  display: none;
+}
+.modal-header{
+  display: flex;
+  justify-content: space-around;
+  background-color: cadetblue;
+  color: #ffffff;
+  width: 100%;
+}
+.modal-header-title{
+  justify-self: start;
+}
+.modal-header-button{
+  cursor: pointer;
+}
+.modal-container > .modal-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  margin: 10px;
+}
+.modal-container > div >img {
+  height: 120px;
+  width: 120px;
+}
+
+.total.-content{
+  font-size: 25px;
+  padding: 20px;
+  text-align: center;
+  padding-top: 20px;
+}
+.ver-carrito{
+  cursor: pointer;
+}
+

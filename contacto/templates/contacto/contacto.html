@@ -1,0 +1,57 @@
+{% extends "tiendaweb/base.html" %}
+
+{% load static %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block content %}
+<!--------HEADER-------->
+<header class="contact-header">
+    <h1>Contacta con Nosotros</h1>
+    <p>¡Estamos aquí para ayudarte!</p>
+</header>
+
+<!--------SECCIÓN DE CONTACTO-------->
+<section class="container contact-section">
+    <div class="row g-4">
+        <div class="col-lg-6 col-md-12">
+            <a href="https://www.instagram.com/leomessi/" target="_blank">
+            <div class="contact-card">
+                <img src="{% static 'tiendaweb/img/Instagram_icon.png.webp' %}" alt="Instagram">
+                <h3>Instagram</h3>
+                <p>@ComicSharingan</p>
+            </div>
+            </a>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <a href="//www.facebook.com/" target="_blank">
+            <div class="contact-card">
+                <img src="{% static 'tiendaweb/img/2023_Facebook_icon.svg.png' %}" alt="Facebook">
+                <h3>Facebook</h3>
+                <p>ComicSharingan</p>
+            </div>
+            </a>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <a href="./contacto.html" target="_blank">
+            <div class="contact-card">
+                <img src="{% static 'tiendaweb/img/WhatsApp_icon.png' %}" alt="WhatsApp">
+                <h3>WhatsApp</h3>
+                <p>+56 9 4575 5455</p>
+            </div>
+            </a>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <a href="./contacto.html" target="_blank">
+            <div class="contact-card">
+                <img src="{% static 'tiendaweb/img/logox.png' %}" alt="Twitter">
+                <h3>Twitter</h3>
+                <p>@ComicSH</p>
+            </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

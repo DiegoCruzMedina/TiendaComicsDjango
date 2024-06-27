@@ -1,0 +1,133 @@
+{% extends "tiendaweb/baseHome.html" %}
+
+{% load static %}
+
+{% block title %}Comics Sharingan{% endblock %}
+
+{% block content %}
+<!--------Comictitulo-------->
+<div class="row">
+    <div class="subs">
+      <div class="margen">
+        <h1>Recien llegados <span class="badge text-bg-secondary">Nuevos</span></h1>
+      </div>
+      <div class="margen">
+        <h4>Últimos agregados al stock</h4>
+      </div>
+    </div>
+</div>
+<!------>
+    <div class="margen1">
+        <div class="container1 mt-5">
+            <div class="row">
+            {% for comic in ultimos_comics %}
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ comic.imagen }}" alt="Imagen de Shingeki no Kyojin" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ comic.nombre }}</h5>
+                            <p class="card-text">${{comic.precio_clp}}</p>
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!--------Comictitulo-------->
+    <div class="row">
+        <div class="subs" id="dc">
+          <div class="margen">
+            <h1>Comics DC <span class="badge text-bg-secondary">DC</span></h1>
+          </div>
+          <div class="margen">
+            <h4>Revisa los mejores comics dc</h4>
+          </div>
+        </div>
+    </div>
+<!------>
+    <div class="margen1">
+        <div class="container1 mt-5">
+            <div class="row">
+            {% for comic in dc_comics %}
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ comic.imagen }}" alt="Imagen de Shingeki no Kyojin" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ comic.nombre }}</h5>
+                            <p class="card-text">${{comic.precio_clp}}</p>
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!--------Comictitulo--------> 
+    <div class="row ">
+        <div class="subs" id="mangas1">
+          <div class="margen">
+            <h1>Comics Manga <span class="badge text-bg-secondary">Nuevos</span></h1>    
+          </div>
+          <div class="margen">
+            <h4>Revisa los mejores mangas</h4>
+          </div>
+        </div>
+    </div>
+<!------>
+    <div class="margen1">
+        <div class="container1 mt-5">
+            <div class="row">
+            {% for comic in manga_comics %}
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ comic.imagen }}" alt="Imagen de Shingeki no Kyojin" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ comic.nombre }}</h5>
+                            <p class="card-text">${{comic.precio_clp}}</p>
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!--------Comictitulo--------> 
+    <div class="row">
+        <div class="subs" id="marvel">
+          <div class="margen">
+            <h1>Comics Marvel <span class="badge text-bg-secondary">Favoritos</span></h1>
+          </div>
+          <div class="margen">
+            <h4>Revisa los comic mejor votados</h4>
+          </div>
+        </div>
+      </div>
+<!------>
+    <div class="margen1">
+        <div class="container1 mt-5">
+            <div class="row">
+            {% for comic in marvel_comics %}
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ comic.imagen }}" alt="Imagen de Shingeki no Kyojin" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ comic.nombre }}</h5>
+                            <p class="card-text">${{comic.precio_clp}}</p>
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

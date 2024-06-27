@@ -19,7 +19,24 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
+                <ul class="navbar-nav" style="padding-left: 20px;">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <span class="nav-link">Bienvenido, {{ user.username }}</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
+                        </li>
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav" style="padding-left: 510px;">
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{% url 'home' %}">Inicio</a>
                 </li>
@@ -30,7 +47,7 @@
                     <a class="nav-link" href="{% url 'contacto' %}">Contactos</a>
                 </li>
                 </ul>
-                <a href="{% url 'carrito' %}"><h3 class="ver-carrito" id="verCarrito">🛒</h3></a>
+                <a style="padding-left: 600px;" href="{% url 'carrito' %}"><h3 class="ver-carrito" id="verCarrito">🛒</h3></a>
             </div>
             </div>
         </nav>

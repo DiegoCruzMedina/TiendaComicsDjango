@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'tiendaWeb',
     'carrito',
     'contacto',
+    'autenticacion',
 ]
 
 MIDDLEWARE = [

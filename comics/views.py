@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Comic
+
 
 def catalogo(request):
     comics = Comic.objects.all()
@@ -31,5 +32,19 @@ def home(request):
         'ultimos_comics': ultimos_comics,
     }
     return render(request, 'comics/home.html', context)
+
+
+def detallesComic(request, id):
+        comic = get_object_or_404(Comic, id=id)
+        comic.precio_clp = "{:,}".format(comic.precio) 
+        context = {"comic":comic}
+        return render(request, "comics/detallesComic.html", context)
+
+def comicsCarro(request):
+    
+    comicscarro = Comic.objects.all()#Este es el select * from
+    context = {"comicscarro":comicscarro}
+    return render(request,"carrito/carrito.html",context)    
+        
 
 # Create your views here.

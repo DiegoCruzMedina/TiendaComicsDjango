@@ -28,11 +28,11 @@
             {% for comic in comics %}
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
                 <div class="card h-100">
-                    <img src="{{ comic.imagen }}" alt="Imagen de Shingeki no Kyojin" class="card-img-top">
+                    <img src="{{ comic.imagen }}" alt="Imagen de Comic" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">{{ comic.nombre }}</h5>
                         <p class="card-text">${{comic.precio_clp}}</p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
+                        <a href="{% url 'detallesComic' comic.id %}" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
             </div>

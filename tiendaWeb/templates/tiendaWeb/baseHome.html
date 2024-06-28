@@ -11,55 +11,75 @@
     <link href="{% static 'tiendaweb/css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
-    <!-----MENU--------->
-    <div class="text-center bg-body"><a href="{% url 'home' %}"><img src="{% static 'tiendaweb/img/logo2.jpg' %}" alt="logo" width="150px"></a></div>
-        <nav class="navbar navbar-expand-lg bg-body" id="navegador">
-            <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav" style="padding-left: 20px;">
-                {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <span class="nav-link">Bienvenido, {{ user.username }}</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
-                    </li>
-                {% endif %}
-                </ul>
-                <ul class="navbar-nav" style="padding-left: 430px;">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{% url 'home' %}">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'catalogo' %}">Catalogo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#dc">DC</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#marvel">Marvel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mangas1">Manga</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contacto' %}">Contactos</a>
-                </li>
-                </ul>
-                <a style="padding-left: 500px;" href="{% url 'carrito' %}"><h3 class="ver-carrito" id="verCarrito">🛒</h3></a>
-            </div>
-            </div>
-        </nav>
+    <!-- Menú y Logo -->
+    <div class="text-center bg-body">
+      <a href="{% url 'home' %}">
+          <img src="{% static 'tiendaweb/img/logo2.jpg' %}" alt="logo" width="150px">
+      </a>
+  </div>
+
+  <!-- Barra de Navegación -->
+  <nav class="navbar navbar-expand-lg bg-body" id="navegador">
+      <div class="container-fluid">
+          <!-- Botón de colapso para pantallas pequeñas -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Contenido del menú colapsable -->
+          <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+              <!-- Sección de Iniciar Sesión / Registrarse -->
+              <ul class="navbar-nav">
+                  {% if user.is_authenticated %}
+                      <li class="nav-item">
+                          <span class="nav-link">Bienvenido, {{ user.username }}</span>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+                      </li>
+                  {% else %}
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
+                      </li>
+                  {% endif %}
+              </ul>
+
+              <!-- Sección para Links del Navbar -->
+              <ul class="navbar-nav mx-auto" style="padding-right: 170px;">
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="{% url 'home' %}">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'catalogo' %}">Catálogo</a>
+                  </li>
+                  <li class="nav-item"> 
+                      <a class="nav-link" href="#dc">DC</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#marvel">Marvel</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#mangas1">Manga</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'contacto' %}">Contactos</a>
+                  </li>
+              </ul>
+
+              <!-- Sección para el Carrito -->
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a href="{% url 'carro:carrito' %}">
+                        <h2>🛒</h2>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
 
          <!--------slider-------->
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -125,16 +145,29 @@
         </a>
         </div>
         <div class="col-md-3 feature-item">
-          <a href="{% url 'carrito' %}" class="linkd">
-          <div class="card h-100">
-            <div style="display: flex; justify-content: center; padding-top: 20px;">
-              <img src="{% static 'tiendaweb/img/batmanlogo.png' %}" alt="Icono de Seguimiento en Línea">
-            </div>
-          <h5>Compra figuras</h5>
-          <div class="divider"></div>
-          <p>¡Encontraras distintos tipos de figuras!</p>
-        </div>
-        </a>
+          {% if user.is_authenticated %}
+            <a href="{% url 'carro:carrito' %}" class="linkd">
+              <div class="card h-100">
+                <div style="display: flex; justify-content: center; padding-top: 20px;">
+                  <img src="{% static 'tiendaweb/img/batmanlogo.png' %}" alt="Icono de Seguimiento en Línea">
+                </div>
+                <h5>Ver carrito</h5>
+                <div class="divider"></div>
+                <p>¡Ve a ver los comics que elegiste!</p>
+              </div>
+            </a>
+          {% else %}
+            <a href="{% url 'login' %}" class="linkd">
+              <div class="card h-100">
+                <div style="display: flex; justify-content: center; padding-top: 20px;">
+                  <img src="{% static 'tiendaweb/img/batmanlogo.png' %}" alt="Icono de Seguimiento en Línea">
+                </div>
+                <h5>Inicia sesión</h5>
+                <div class="divider"></div>
+                <p>Para poder comprar primero inicia sesión.</p>
+              </div>
+            </a>
+          {% endif %}
         </div>
       </div>
     </div>

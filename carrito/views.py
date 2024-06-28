@@ -1,19 +1,31 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .carrito import Carrito
 from comics.models import Comic
+    
+
 
 def index(request):
-    context = {}
+    carro = Carrito(request)
+    context = {'carro': carro.carro,
+              'user_authenticated': request.user.is_authenticated, }
     return render(request, "carrito/carrito.html", context)
+
 
 def agregarCarro(request, comic_id):
     carro = Carrito(request)
-    comic = Comic.objects.get(id=comic_id)
-    imagen_url = comic.imagen
-    print(carro)
-
+    comic = get_object_or_404(Comic, id=comic_id)
     carro.agregar(comic=comic)
-    return redirect("carro:carrito")  # Usando el namespace y nombre de la vista
+    return redirect("carro:carrito")
 
 
-# Create your views here.
+def eliminarCarro(request, comic_id):
+    carro = Carrito(request)
+    comic = get_object_or_404(Comic, id=comic_id)
+    carro.eliminar(comic=comic)
+    return redirect("carro:carrito")
+
+def limpiarCarro(request):
+    carro = Carrito(request)
+    carro.limpiar()
+    return redirect("carro:carrito")
+

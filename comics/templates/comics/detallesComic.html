@@ -26,7 +26,15 @@
                     <h5 id="cantidadProductos">Disponibles {{comic.cantidad}}</h5>
                     <br>
                     <br>
-                    <a href="{%url 'carro:agregar' comic.id %}"><button class="rounded-5 w-50 p-2 fs-6" style="background-color: #7C7C7C;color: white;">Añadir Al Carro</button></a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'carro:agregar' comic.id %}">
+                            <button class="rounded-5 w-50 p-2 fs-6" style="background-color: #7C7C7C; color: white;">Añadir al Carro</button>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'login' %}">
+                            <button class="rounded-5 w-50 p-2 fs-6" style="background-color: #7C7C7C; color: white;">Inicia Sesión para Añadir al Carro</button>
+                        </a>
+                    {% endif %}
                     <br>
                     <br>
                     <p class="w-75" id="comentarioPage">{{comic.comentario}}</p>

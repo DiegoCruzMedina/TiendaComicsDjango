@@ -20,6 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('comics/', include("comics.urls")),
     path('contacto/', include("contacto.urls")),
-    path('carrito/', include("carrito.urls")),
     path('autenticacion/', include('autenticacion.urls')),
+    path('carro/', include(('carrito.urls', 'carro'), namespace='carro')),  # Incluir las rutas de la aplicación carrito con su namespace
 ]

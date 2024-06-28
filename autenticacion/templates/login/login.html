@@ -15,7 +15,9 @@
   <div class="background-blur"></div>
   <div class="login-container">
     <div class="login-header">
-      <img src="{% static 'tiendaweb/img/logo2.jpg' %}" alt="Comics Sharingan Logo">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'tiendaweb/img/logo2.jpg' %}" alt="Comics Sharingan Logo">
+      </a>
       <h1>Iniciar Sesión</h1>
     </div>
     <form method="post">
@@ -30,7 +32,15 @@
       </div>
       <button type="submit" class="btn btn-login">Iniciar Sesión</button>
       <div class="form-text mt-3">
-        <a href="#">¿Olvidaste tu contraseña?</a>
+        <div class="col text-center">
+          <a href="{% url 'contacto' %}">¿Olvidaste tu contraseña?</a>
+        </div>
+      </div>
+      <br>
+      <div class="row mt-3">
+        <div class="col text-center">
+          <a href="{% url 'registro' %}" class="link-secondary">Registrate</a>
+        </div>
       </div>
     </form>
   </div>

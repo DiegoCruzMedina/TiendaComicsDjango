@@ -14,7 +14,7 @@ class Carrito:
                 "nombre": comic.nombre,
                 "precio": str(comic.precio),
                 "cantidad": 1,
-                "imagen": comic.imagen.url  # Si 'comic.imagen' es un campo ImageField
+                "imagen": comic.imagen 
             }
         else:
             for key, value in self.carro.items():
@@ -26,4 +26,14 @@ class Carrito:
 
     def guardar_carro(self):
         self.session["carro"] = self.carro
+        self.session.modified = True
+
+    def eliminar(self, comic):
+        comic_id = str(comic.id)
+        if comic_id in self.carro:
+            del self.carro[comic_id]
+            self.guardar_carro()
+
+    def limpiar(self):
+        self.session["carro"] = {}
         self.session.modified = True

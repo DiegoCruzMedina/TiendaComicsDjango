@@ -21,7 +21,7 @@ class Carrito:
                 if key == str(comic.id):
                     value["cantidad"] = value["cantidad"] + 1
                     value["precio"] = float(value["precio"]) + comic.precio
-                    break  # Ya no recorras más
+                    break  
         self.guardar_carro()
 
     def guardar_carro(self):
@@ -34,6 +34,26 @@ class Carrito:
             del self.carro[comic_id]
             self.guardar_carro()
 
+    def restar(self,comic):
+        for key, value in self.carro.items():
+            if key==str(comic.id):
+                value["cantidad"]=value["cantidad"]-1
+                value["precio"]=float(value["precio"]) - comic.precio
+                if value["cantidad"]<1:
+                    self.eliminar(comic)
+                    break
+        self.guardar_carro()
+
     def limpiar(self):
         self.session["carro"] = {}
         self.session.modified = True
+    
+    def total(request):
+        total= 0
+        if request.user_authenticated:
+            if 'carro' in request.session:
+                for key, value in request.session["carro"].items():
+                    total = total + float(value["precio"])
+        return {
+        "total":total
+    }

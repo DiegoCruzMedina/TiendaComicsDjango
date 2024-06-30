@@ -98,4 +98,46 @@ body {
     color: #ffffff;
     transition: all .3s ease;
 }
+
+.btn-right {
+    
+    margin-right: 0px;
+    margin-bottom: 50px; /* Incrementar margen inferior */
+}
+
+.btn-custom {
+    display: inline-block;
+    padding: 8px 16px;  /* Ajustar tamaño del botón */
+    font-size: 14px;  /* Ajustar tamaño del texto */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+}
+
+.table-container {
+    padding-bottom: 20px; /* Añadir padding bottom a la tabla */
+}
+.text-right {
+    text-align: end;
+}
+.btn-left {
+    
+    margin-left: 0px;
+    margin-bottom: 50px; /* Incrementar margen inferior */
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
 /*----------------------------*/

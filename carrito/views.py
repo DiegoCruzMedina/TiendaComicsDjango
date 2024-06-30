@@ -24,8 +24,15 @@ def eliminarCarro(request, comic_id):
     carro.eliminar(comic=comic)
     return redirect("carro:carrito")
 
+def restarCarro(request,comic_id):
+    carro= Carrito(request)
+    comic= get_object_or_404(Comic, id=comic_id)
+    carro.restar(comic=comic)
+    return redirect("carro:carrito")
+
 def limpiarCarro(request):
     carro = Carrito(request)
     carro.limpiar()
     return redirect("carro:carrito")
+    
 

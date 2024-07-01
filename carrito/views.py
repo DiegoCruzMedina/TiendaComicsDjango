@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .carrito import Carrito
 from comics.models import Comic
+from django.contrib import messages
     
 
 
@@ -29,6 +30,14 @@ def restarCarro(request,comic_id):
     comic= get_object_or_404(Comic, id=comic_id)
     carro.restar(comic=comic)
     return redirect("carro:carrito")
+
+def comprarCarro(request):
+    carro = Carrito(request)
+    carro.limpiar()
+    messages.success(request, "Compra realizada exitosamente")
+    return redirect("carro:carrito")
+
+
 
 def limpiarCarro(request):
     carro = Carrito(request)

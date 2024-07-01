@@ -71,46 +71,45 @@
         </div>
     </nav>
 
-<!--Contenido cambiante-->
-{% block content %}
+    <!--Contenido cambiante-->
+    {% block content %}{% endblock %}
 
-
-{% endblock %}
-<footer class="footer">
-    <div class="container">
-        <div class="footer-row">
-            <div class="footer-links">
-                <h4>Tienda</h4> 
-                <ul>
-                    <li><a href="{% url 'home' %}">Inicio</a></li>
-                    <li><a href="{% url 'contacto' %}">Contacto</a></li>
-                    <li><a href="{% url 'catalogo' %}">Catalogo</a></li>
-                    <li><a href="{% url 'carro:carrito' %}">Carrito</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Informacion</h4>           
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-links">
+                    <h4>Tienda</h4> 
+                    <ul>
+                        <li><a href="{% url 'home' %}">Inicio</a></li>
+                        <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                        <li><a href="{% url 'catalogo' %}">Catalogo</a></li>
+                        <li><a href="{% url 'carro:carrito' %}">Carrito</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Informacion</h4>           
                     <p>Somos Comics sharingan una tienda de venta de los mejores comics de diferentes tipos.</p>
                     <p>Correo: comicsharingann@gmail.com</p>
                     <p>Telefono: +56 9 9999 9999</p>
-            </div>
-            <div class="footer-links">
-                <h4>Siguenos</h4> 
-                <div class="social-link">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="footer-links">
+                    <h4>Siguenos</h4> 
+                    <div class="social-link">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="{% url 'home' %}"><img src="{% static 'tiendaweb/img/logo2.jpg' %}" alt="logo" width="150px"></a>
                 </div>
             </div>
-            <div class="footer-links">
-              <a href="{% url 'home' %}"><img src="{% static 'tiendaweb/img/logo2.jpg' %}" alt="logo" width="150px"></a>
-          </div>
-        </div>
-    </div>        
-  </footer>
+        </div>        
+    </footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
 </html>

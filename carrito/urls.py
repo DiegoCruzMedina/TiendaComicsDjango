@@ -8,5 +8,6 @@ urlpatterns = [
     path("agregar/<int:comic_id>/", views.agregarCarro, name="agregar"),
     path("eliminar/<int:comic_id>/", views.eliminarCarro, name="eliminar"),
     path("restar/<int:comic_id>", views.restarCarro, name="restar"),
+    path("comprar/", views.comprarCarro, name="comprar"),
     path("limpiar/", views.limpiarCarro, name="limpiar"),
 ]

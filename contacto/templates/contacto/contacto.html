@@ -11,47 +11,75 @@
     <p>¡Estamos aquí para ayudarte!</p>
 </header>
 
-<!--------SECCIÓN DE CONTACTO-------->
+<!--------SECCIÓN DE CONTACTO Y FORMULARIO-------->
 <section class="container contact-section">
-    <div class="row g-4">
-        <div class="col-lg-6 col-md-12">
-            <a href="https://www.instagram.com/leomessi/" target="_blank">
-            <div class="contact-card">
-                <img src="{% static 'tiendaweb/img/Instagram_icon.png.webp' %}" alt="Instagram">
-                <h3>Instagram</h3>
-                <p>@ComicSharingan</p>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="contact-card">
+                        <a href="https://www.instagram.com/leomessi/" target="_blank">
+                            <img src="{% static 'tiendaweb/img/Instagram_icon.png.webp' %}" alt="Instagram">
+                            <h3>Instagram</h3>
+                            <p>@ComicSharingan</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="contact-card">
+                        <a href="//www.facebook.com/" target="_blank">
+                            <img src="{% static 'tiendaweb/img/2023_Facebook_icon.svg.png' %}" alt="Facebook">
+                            <h3>Facebook</h3>
+                            <p>ComicSharingan</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="contact-card">
+                        <a href="./contacto.html" target="_blank">
+                            <img src="{% static 'tiendaweb/img/WhatsApp_icon.png' %}" alt="WhatsApp">
+                            <h3>WhatsApp</h3>
+                            <p>+56 9 4575 5455</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="contact-card">
+                        <a href="./contacto.html" target="_blank">
+                            <img src="{% static 'tiendaweb/img/logox.png' %}" alt="Twitter">
+                            <h3>Twitter</h3>
+                            <p>@ComicSH</p>
+                        </a>
+                    </div>
+                </div>
             </div>
-            </a>
         </div>
-        <div class="col-lg-6 col-md-12">
-            <a href="//www.facebook.com/" target="_blank">
-            <div class="contact-card">
-                <img src="{% static 'tiendaweb/img/2023_Facebook_icon.svg.png' %}" alt="Facebook">
-                <h3>Facebook</h3>
-                <p>ComicSharingan</p>
+        <div class="col-lg-6">
+            <div class="contact-form">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="id_nombre" class="form-label">Nombre</label>
+                        {{ form.nombre }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_correo" class="form-label">Correo electrónico</label>
+                        {{ form.correo }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_mensaje" class="form-label">Mensaje</label>
+                        {{ form.mensaje }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+                {% if mensaje %}
+                <div class="alert alert-success mt-3" role="alert">
+                    {{ mensaje }}
+                </div>
+                {% endif %}
             </div>
-            </a>
-        </div>
-        <div class="col-lg-6 col-md-12">
-            <a href="./contacto.html" target="_blank">
-            <div class="contact-card">
-                <img src="{% static 'tiendaweb/img/WhatsApp_icon.png' %}" alt="WhatsApp">
-                <h3>WhatsApp</h3>
-                <p>+56 9 4575 5455</p>
-            </div>
-            </a>
-        </div>
-        <div class="col-lg-6 col-md-12">
-            <a href="./contacto.html" target="_blank">
-            <div class="contact-card">
-                <img src="{% static 'tiendaweb/img/logox.png' %}" alt="Twitter">
-                <h3>Twitter</h3>
-                <p>@ComicSH</p>
-            </div>
-            </a>
         </div>
     </div>
 </section>
-
 
 {% endblock %}

@@ -44,16 +44,9 @@ class Carrito:
                     break
         self.guardar_carro()
 
+
+
     def limpiar(self):
         self.session["carro"] = {}
         self.session.modified = True
     
-    def total(request):
-        total= 0
-        if request.user_authenticated:
-            if 'carro' in request.session:
-                for key, value in request.session["carro"].items():
-                    total = total + float(value["precio"])
-        return {
-        "total":total
-    }

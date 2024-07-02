@@ -12,7 +12,8 @@
 </header>
 
 <!--------SECCIÓN DE CONTACTO Y FORMULARIO-------->
-<section class="container contact-section">
+
+<div style="padding: 50px 58px 50px 80px;">
     <div class="row">
         <div class="col-lg-6">
             <div class="row">
@@ -55,31 +56,39 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <div class="contact-form">
-                <form method="post">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="id_nombre" class="form-label">Nombre</label>
-                        {{ form.nombre }}
+            <div class="contact-card">
+                <div class="contact-form">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div style="padding-top: 10px;">
+                            <label for="id_nombre" class="form-label"><p>Nombre</p></label>
+                            {{ form.nombre }}
+                        </div>
+                        <div class="">
+                            <label for="id_correo" class="form-label"><p>Correo electrónico</p></label>
+                            {{ form.correo }}
+                        </div>
+                        <div class="">
+                            <label for="id" class="form-label"><p>Tipo de consulta: </p></label>
+                            {{ form.tipo_consulta }}
+                        </div>
+                        <div class="">
+                            <h5>Mensaje</h5>
+                            <label for="id_mensaje" class="form-label"></label>
+                            {{ form.mensaje }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                    {% if mensaje %}
+                    <div class="alert alert-success mt-3" role="alert">
+                        {{ mensaje }}
                     </div>
-                    <div class="mb-3">
-                        <label for="id_correo" class="form-label">Correo electrónico</label>
-                        {{ form.correo }}
-                    </div>
-                    <div class="mb-3">
-                        <label for="id_mensaje" class="form-label">Mensaje</label>
-                        {{ form.mensaje }}
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
-                {% if mensaje %}
-                <div class="alert alert-success mt-3" role="alert">
-                    {{ mensaje }}
+                    {% endif %}
                 </div>
-                {% endif %}
             </div>
         </div>
     </div>
+</div>
 </section>
 
 {% endblock %}

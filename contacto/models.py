@@ -6,7 +6,8 @@ opciones_consultas= [
     [0, "Consulta"],
     [1, "Reclamo"],
     [2, "Sugerencia"],
-    [3, "Felicitaciones"]
+    [3, "Felicitaciones"],
+    {4, "Problemas Iniciar sesion"}
 ]
 class Contacto(models.Model):
     nombre = models.CharField(max_length=50)

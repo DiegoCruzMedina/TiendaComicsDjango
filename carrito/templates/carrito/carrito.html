@@ -6,10 +6,10 @@
 
 {% block content %}
 <br>
-<div class="row" style="padding: 0 100px 0 100px;">
+<div class="row" style="padding: 20px 0 0 0;">
     <div class="container1">
         {% if user_authenticated %}
-        <div class="button-container">
+        <div class="button-container" style="padding: 0 0 20px 0;">
             <a href="{% url 'carro:limpiar' %}" class="btn btn-left btn-custom">Limpiar Carrito</a>
             <a href="{% url 'catalogo' %}" class="btn btn-right btn-custom">Seguir Comprando</a>
         </div>
@@ -44,7 +44,7 @@
                     {% empty %}
                     <tr>
                         <td></td>
-                        <td colspan="3">
+                        <td colspan="5">
                             <h1 style="font-size: 2rem; font-weight: bold; padding: 100px 0 100px 200px; display: inline-block;">
                                 No hay ningún cómic en el carrito
                             </h1>
@@ -53,15 +53,15 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-                <tfoot>
+                <tbody>
                     <tr>
-                        <td colspan="4" class="text-right">
+                        <td colspan="5" class="text-right">
                             <h2 class="carro-text">Total: $ {{ total }}</h2>
                         </td>
                     </tr>
                     {% if request.session.carro.items %}
                     <tr>
-                        <td colspan="4" class="text-right">
+                        <td colspan="5" class="text-right">
                             <form action="{% url 'carro:comprar' %}" method="POST">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-primary"><h2 class="carro-">Comprar</h2></button>
@@ -69,7 +69,7 @@
                         </td>
                     </tr>
                     {% endif %}
-                </tfoot>
+                </tbody>
             </table>
         </div>
         {% else %}
@@ -85,6 +85,8 @@
     </div>
 </div>
 <br>
+
+<!---Error de sintaxis CODIGO DJANGO CON JAVASCRIPT---->
 
 {% if messages %}
     <script>

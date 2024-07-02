@@ -4,7 +4,20 @@ body {
 
 }
 
-
+/*-------DISEÑO API RELOJ--------*/
+#reloj {
+    display: inline-block;
+    font-size: 36px; /* Tamaño de la fuente */
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-left: 20px;
+    background-color: #ffeb3b; /* Color de fondo amarillo */
+    color: #000; /* Color del texto */
+    border: 2px solid #000; /* Borde negro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra */
+  }
+  
 #dataCarro {
     width: 80%;
     margin-top: 20px;

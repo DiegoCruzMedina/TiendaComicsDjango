@@ -5,6 +5,21 @@ body{
     font-family: sans-serif;
 }
 
+/*-------DISEÑO API RELOJ--------*/
+#reloj {
+  display: inline-block;
+  text-align: center;
+  font-size: 36px; /* Tamaño de la fuente */
+  font-weight:unset;
+  padding: 10px 20px;
+  margin-left: 20px;
+  background-color: #666060; 
+  color: #1a1818; 
+  border: 1px solid #2b2929; /* Borde negro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
  /*--------slider-------->*/
  .slider-img {
     height: 600px; 

@@ -1,17 +1,23 @@
 {% extends "tiendaweb/baseCarro.html" %}
 
+{% load humanize %}
+
 {% load static %}
 
 {% block title %}Carrito de compras{% endblock %}
 
 {% block content %}
 <br>
-<div class="row" style="padding: 20px 0 0 0;">
+<div class="row" style="padding: 10px 40px 0 40px;">
     <div class="container1">
         {% if user_authenticated %}
-        <div class="button-container" style="padding: 0 0 20px 0;">
-            <a href="{% url 'carro:limpiar' %}" class="btn btn-left btn-custom">Limpiar Carrito</a>
-            <a href="{% url 'catalogo' %}" class="btn btn-right btn-custom">Seguir Comprando</a>
+        <div class="button-container" style="padding: 0 0 15px 0;">
+            <a href="{% url 'carro:limpiar' %}" >
+                <button class="rounded-5" style="background-color: #7C7C7C; color: white;">Limpiar Carrito</button>
+            </a>
+            <a href="{% url 'catalogo' %}" class="">
+                <button class="rounded-5" style="background-color: #7C7C7C; color: white;">Seguir Comprando</button>
+            </a>
         </div>
         <div class="table-container">
             <table class="table">
@@ -27,9 +33,9 @@
                 <tbody>
                     {% for key, value in carro.items %}
                     <tr>
-                        <td><img src="{{ value.imagen }}" alt="Imagen" class="imagenCarro" style="width: 100px; height: auto;"></td>
+                        <td><img src="{{ value.imagen }}" alt="Imagen" class="imagenCarro" ></td>
                         <td><h2 class="carro-name">{{ value.nombre }}</h2></td>
-                        <td><h2 class="carro-text">${{ value.precio }}</h2></td>
+                        <td><h2 class="carro-text">${{ value.precio|floatformat:0|intcomma }}</h2></td>
                         <td>
                             <h2 class="carro-text">
                                 <a href="{% url 'carro:restar' value.producto_id %}" class="btn btn-sm btn-danger">-</a>
@@ -56,7 +62,7 @@
                 <tbody>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <h2 class="carro-text">Total: $ {{ total }}</h2>
+                            <h2 class="carro-text">Total: $ {{ total|floatformat:0|intcomma }}</h2>
                         </td>
                     </tr>
                     {% if request.session.carro.items %}

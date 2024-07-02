@@ -1,21 +1,55 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: linear-gradient(to top, #f7f9fa, #ffffff);
 
 }
 
 /*-------DISEÑO API RELOJ--------*/
-#reloj {
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 0 20px; /* Ajuste de espacio */
+    box-sizing: border-box;
+  }
+  
+  .logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .time-container {
+    position: absolute;
+    right: 60px;
+    padding: 15px 0 15px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .time-container {
+        position: static;
+        margin-top: 10px;
+    }
+  }
+  
+  #reloj {
     display: inline-block;
-    font-size: 36px; /* Tamaño de la fuente */
-    font-weight: bold;
+    text-align: center;
+    font-size: 46px; 
+    font-weight:unset;
     padding: 10px 20px;
     margin-left: 20px;
-    background-color: #ffeb3b; /* Color de fondo amarillo */
-    color: #000; /* Color del texto */
-    border: 2px solid #000; /* Borde negro */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra */
+    background: linear-gradient(to top, #555, rgb(49, 48, 47));
+    color: #919191; 
+    border: 1px solid #2b2929; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
   }
   
 #dataCarro {
@@ -42,7 +76,7 @@ body {
 }
 
 .imagenCarro {
-    width: 80px;
+    width: 140px;
     height: auto;
     border-radius: 5px;
 }
@@ -55,14 +89,14 @@ body {
 
 .carro-text {
     color: green;
-    font-size: 1.3em;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 
 /*--------footer---------*/
 .footer{
-    background-color: gray;
+    background: linear-gradient(to top, #555, gray);
 }
 
 .container{

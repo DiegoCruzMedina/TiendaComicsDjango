@@ -12,15 +12,15 @@ class Carrito:
             self.carro[comic.id] = {
                 "producto_id": comic.id,
                 "nombre": comic.nombre,
-                "precio": str(comic.precio),
+                "precio": float(comic.precio),
                 "cantidad": 1,
                 "imagen": comic.imagen 
             }
         else:
             for key, value in self.carro.items():
                 if key == str(comic.id):
-                    value["cantidad"] = value["cantidad"] + 1
-                    value["precio"] = float(value["precio"]) + comic.precio
+                    value["cantidad"] += 1
+                    value["precio"] += float(comic.precio)
                     break  
         self.guardar_carro()
 
@@ -34,19 +34,16 @@ class Carrito:
             del self.carro[comic_id]
             self.guardar_carro()
 
-    def restar(self,comic):
+    def restar(self, comic):
         for key, value in self.carro.items():
             if key==str(comic.id):
-                value["cantidad"]=value["cantidad"]-1
-                value["precio"]=float(value["precio"]) - comic.precio
+                value["cantidad"] -= 1
+                value["precio"] -= float(comic.precio)
                 if value["cantidad"]<1:
                     self.eliminar(comic)
                     break
         self.guardar_carro()
 
-
-
     def limpiar(self):
         self.session["carro"] = {}
         self.session.modified = True
-    

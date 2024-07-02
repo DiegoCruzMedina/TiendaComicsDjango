@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="contact-card">
-                        <a href="https://www.instagram.com/leomessi/" target="_blank">
+                        <a href="https://www.instagram.com/leomessi/" target="_blank" class="linkd">
                             <img src="{% static 'tiendaweb/img/Instagram_icon.png.webp' %}" alt="Instagram">
                             <h3>Instagram</h3>
                             <p>@ComicSharingan</p>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="contact-card">
-                        <a href="//www.facebook.com/" target="_blank">
+                        <a href="//www.facebook.com/" target="_blank" class="linkd">
                             <img src="{% static 'tiendaweb/img/2023_Facebook_icon.svg.png' %}" alt="Facebook">
                             <h3>Facebook</h3>
                             <p>ComicSharingan</p>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="contact-card">
-                        <a href="./contacto.html" target="_blank">
+                        <a href="{% url 'contacto' %}" target="_blank" class="linkd">
                             <img src="{% static 'tiendaweb/img/WhatsApp_icon.png' %}" alt="WhatsApp">
                             <h3>WhatsApp</h3>
                             <p>+56 9 4575 5455</p>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="contact-card">
-                        <a href="./contacto.html" target="_blank">
+                        <a href="{% url 'contacto' %}" target="_blank" class="linkd">
                             <img src="{% static 'tiendaweb/img/logox.png' %}" alt="Twitter">
                             <h3>Twitter</h3>
                             <p>@ComicSH</p>

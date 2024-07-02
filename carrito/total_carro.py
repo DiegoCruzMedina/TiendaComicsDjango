@@ -3,7 +3,7 @@ def total(request):
     if request.user.is_authenticated:
         if 'carro' in request.session:
             for key, value in request.session["carro"].items():
-                total += float(value["precio"])
+                total += float(value["precio"])  
     return {
         "total": total
     }

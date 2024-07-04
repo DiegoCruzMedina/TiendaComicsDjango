@@ -65,6 +65,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'contacto' %}">Contactos</a>
                     </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'misPedidos' %}">Tus compras</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Tus compras</a>
+                        </li>
+                    {% endif %}
                 </ul>
 
                 <!-- Sección para el Carrito -->

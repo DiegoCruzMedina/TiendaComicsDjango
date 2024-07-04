@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/comics/home/', permanent=True)),
     path('admin/', admin.site.urls),
     path('comics/', include("comics.urls")),
     path('contacto/', include("contacto.urls")),
     path('autenticacion/', include('autenticacion.urls')),
-    path('carro/', include(('carrito.urls', 'carro'), namespace='carro')),  # Incluir las rutas de la aplicación carrito con su namespace
+    path('carro/', include(('carrito.urls', 'carro'), namespace='carro')),
+    path('ordenes/', include("ordenes.urls",)),
 ]

@@ -1,0 +1,58 @@
+{% extends "tiendaweb/base.html" %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block content %}
+<div class="container-pedidos row">
+    <h2 class="h2-pedidos">Mis Pedidos</h2>
+    {% if pedidos %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID compras</th>
+                    <th>Fecha</th>
+                    <th>Total</th>
+                    <th>Cantidad de Comics</th>
+                    <th>Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pedido in pedidos %}
+                    <tr>
+                        <td>{{ pedido.id }}</td>
+                        <td><h4 class="fecha-pedidos">{{ pedido.fecha }}</h4></td>
+                        <td><h3 class="precio-pedidos">${{ pedido.total_precio|floatformat:0|intcomma }}</h3></td>
+                        <td><h4 class="cantidad-pedidos">{{ pedido.cantidad_comics }}</h4></td>
+                        <td>
+                            <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#detalle{{ pedido.id }}" aria-expanded="false" aria-controls="detalle{{ pedido.id }}">
+                                Ver Detalles
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <div class="collapse" id="detalle{{ pedido.id }}">
+                                <div class="card card-body">
+                                    <ul>
+                                        {% for item in pedido.items.all %}
+                                            <div style="padding-bottom: 10px ;">
+                                                <li>{{ item.cantidad }} x {{ item.comic.nombre }} - ${{ item.precio_total|floatformat:0|intcomma }}</li>
+                                            </div>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div style="padding: 70px 0 70px 15px;">
+            <p class="p-pedidos">No tienes pedidos realizados.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

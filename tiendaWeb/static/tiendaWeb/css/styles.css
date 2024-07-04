@@ -138,7 +138,7 @@ body{
     margin-bottom: 8px;
     margin-top: 5px;
     padding: 8px;
-    background: linear-gradient(to top, rgb(43, 41, 39), #555);
+    background: linear-gradient(to top, rgb(100, 98, 96), #202636);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
@@ -454,3 +454,29 @@ body{
   cursor: pointer;
 }
 
+/*---DISEÑO PEDIDOS---*/
+.container-pedidos{
+  padding: 60px 100px 80px 60px;
+  border-radius: 5px;         
+}
+
+.h2-pedidos{
+  font-size: 3rem;
+}
+
+.p-pedidos{
+  font-size: 1.5rem;
+}
+.precio-pedidos{
+  color: green;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.fecha-pedidos{
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+.cantidad-pedidos{
+  font-size: 1.3rem;
+  color: #666;
+}

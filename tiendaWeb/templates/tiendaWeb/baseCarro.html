@@ -122,18 +122,18 @@
 
 
 <!---Error de sintaxis CODIGO DJANGO CON JAVASCRIPT---->
-    {% if messages %}
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                {% for message in messages %}
-                    Swal.fire({
-                        title: "Felicitaciones",
-                        text: "Iniciar Sesion Verificado De Forma correcta",
-                        icon: "success"
-                    });
-                {% endfor %}
+{% if messages %}
+    <script>
+        {% for message in messages %}
+            Swal.fire({
+                title: "{% if message.tags == 'success' %}Compra realizada exitosamente{% else %}Error{% endif %}",
+                text: '{{ message }}',
+                icon: '{% if message.tags == 'success' %}success{% else %}error{% endif %}',
+                showConfirmButton: false,
+                timer: 3000
             });
-        </script>
-    {% endif %}
+        {% endfor %}
+    </script>
+{% endif %}
 </body>
 </html>

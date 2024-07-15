@@ -94,19 +94,7 @@
 
 <!---Error de sintaxis CODIGO DJANGO CON JAVASCRIPT---->
 
-{% if messages %}
-    <script>
-        {% for message in messages %}
-            Swal.fire({
-                title: 'Compra realizada exitosamente',
-                text: '{{ message }}',
-                icon: 'success',
-                showConfirmButton: false,
-                timer: 3000
-            });
-        {% endfor %}
-    </script>
-{% endif %}
+
 
 {% endblock %}
 

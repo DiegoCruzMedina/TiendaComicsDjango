@@ -178,7 +178,7 @@ body{
 }
 
 .container{
-    max-width: 1200px;
+    max-width: 1400px;
     padding: 80px 0;
     
 }
@@ -188,7 +188,7 @@ body{
 }
 .footer-links{
     width: 25%;
-    padding: 0 8px;
+    padding: 0 20px;
 }
 .footer-links h4 {
     font-size: 20px;
@@ -456,7 +456,7 @@ body{
 
 /*---DISEÑO PEDIDOS---*/
 .container-pedidos{
-  padding: 60px 100px 80px 60px;
+  padding: 60px 80px 60px 80px;
   border-radius: 5px;         
 }
 

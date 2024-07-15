@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from comics.models import Comic
-
+zip
 class Orden(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     total_precio = models.DecimalField(max_digits=10, decimal_places=2)

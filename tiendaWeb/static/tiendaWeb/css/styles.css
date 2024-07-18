@@ -55,7 +55,7 @@ body{
 
  /*--------slider-------->*/
  .slider-img {
-    height: 600px; 
+    height: 580px; 
     object-fit: cover; 
   }
 
@@ -138,7 +138,7 @@ body{
     margin-bottom: 8px;
     margin-top: 5px;
     padding: 8px;
-    background: linear-gradient(to top, rgb(100, 98, 96), #202636);
+    background: linear-gradient(to top, rgb(57, 61, 71), #0c0149);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }

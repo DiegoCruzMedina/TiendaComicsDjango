@@ -15,15 +15,15 @@
                 <div class="col mt-5 ms-3">
                     <h5 class="mb-3" style="color:#929292 ;">Comics Sharingan</h5>
                     
-                    <h1  class="fs-1 fw-bold">{{comic.nombre}}</h1>
+                    <h1  class="fs-1 fw-bold" style="color: aliceblue;">{{comic.nombre}}</h1>
                     <br>
                     <br>
-                    <h2> ${{comic.precio_clp}}</h2>
+                    <h2 style="color: aliceblue;"> ${{comic.precio_clp}}</h2>
                     <h6 style="color: #929292;">impueso incluido</h6>
                     <br>
                     <label for="cantidad"  style="color: #929292;">Cantidad</label>
                     <br>
-                    <h5 id="cantidadProductos">Disponibles {{comic.cantidad}}</h5>
+                    <h5 id="cantidadProductos" style="color: #726d6d;">Disponibles {{comic.cantidad}}</h5>
                     <br>
                     <br>
                     {% if comic.cantidad > 0 %}
@@ -44,21 +44,21 @@
                     {% endif %}
                     <br>
                     <br>
-                    <p class="w-75" id="comentarioPage">{{comic.comentario}}</p>
+                    <p class="w-75" id="comentarioPage" style="color: rgb(205, 209, 204);">{{comic.comentario}}</p>
                     <br>
                     
                     <h6 style="color: #929292;">Más Información</h6>    
                     <br>
 
-                    <h6>Editorial: {{comic.editorial}}</h6>
+                    <h6 style="color: rgb(205, 209, 204);">Editorial: {{comic.editorial}}</h6>
                     <h6 id="editorialPage"style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"></h6>
-                    <h6>Autor/es: {{comic.autor}}</h6>   
+                    <h6 style="color: rgb(205, 209, 204);">Autor/es: {{comic.autor}}</h6>   
                     <h6 id="autorPage" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"> </h6>
-                    <h6>Fecha de lanzamiento: {{comic.fecha}}</h6>
+                    <h6 style="color: rgb(205, 209, 204);">Fecha de lanzamiento: {{comic.fecha}}</h6>
                     <h6 id="fechaPage" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"></h6>
-                    <h6>Paginas: {{comic.paginas}}</h6>
+                    <h6 style="color: rgb(205, 209, 204);">Paginas: {{comic.paginas}}</h6>
                     <h6 id="paginasPage" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"> </h6>
-                    <h6>Tamaño: {{comic.tamaño}}</h6>
+                    <h6 style="color: rgb(205, 209, 204);">Tamaño: {{comic.tamaño}}</h6>
                     <h6 id="tamañoPage" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"> </h6>                
                     
 
